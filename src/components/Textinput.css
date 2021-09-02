@@ -1,0 +1,22 @@
+.outer{
+    display: flex;
+}
+.inner1{
+    flex: 1;
+}
+.inner2{
+    flex: 1;
+    background-color: rgb(10, 85, 20);
+    color:white ;
+    border: 2px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.inner3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}

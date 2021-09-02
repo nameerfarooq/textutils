@@ -1,0 +1,40 @@
+.alertIMP{
+    margin: 10px auto;
+    width: 500px;
+    
+}
+
+#inlineRadio1{
+    color: red;
+    background-color: rgb(255, 0, 106);
+}
+#inlineRadio1:checked:after{
+    background-color: rgb(255, 0, 0);
+    color: red;
+}
+.btn:hover{
+background-color: white !important;
+color: black !important;
+border: black 1px solid !important;
+}
+
+
+#inlineRadio2{
+    color: rgb(26, 0, 172);
+    background-color: rgb(26, 0, 172);
+}
+#inlineRadio2:checked:after{
+    background-color: rgb(26, 0, 172);
+    color: rgb(26, 0, 172);
+}
+
+
+
+#inlineRadio3{
+    color: rgb(69, 207, 0);
+    background-color: rgb(69, 207, 0);
+}
+#inlineRadio3:checked:after{
+    background-color: rgb(69, 207, 0);
+    color: rgb(69, 207, 0);
+}
