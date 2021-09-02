@@ -88,7 +88,7 @@ if(props.mode.color==="white"){
          
           
           
-           {text.split(" ").length-1} words and {text.length} characters
+           {text.split(" ").filter((element)=>{return element.length !== 0}).length} words and {text.length} characters
           </p>
         
 
