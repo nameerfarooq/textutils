@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  
 } from "react-router-dom";
 
 function App() {
@@ -40,10 +40,10 @@ function App() {
     }
   };
   const toggleModeBlue = () => {
-    if (mode.color !== "blue") {
+    if (mode.color !== "#003154") {
       setmode({
         theme : "dark",
-        color : "blue"
+        color : "#003154"
       });
       document.body.style.backgroundColor = "#003154";
       document.body.style.color = "white";
@@ -51,10 +51,10 @@ function App() {
     }
   };
   const toggleModeRed = () => {
-    if (mode.color !== "red") {
+    if (mode.color !== "#690000") {
       setmode({
         theme : "dark",
-        color : "red"
+        color : "#690000"
       });
       document.body.style.backgroundColor = "#690000";
       document.body.style.color = "white";
@@ -62,10 +62,10 @@ function App() {
     }
   };
   const toggleModeGreen = () => {
-    if (mode.color !== "green") {
+    if (mode.color !== "#00350c") {
       setmode({
         theme : "dark",
-        color : "green"
+        color : "#00350c"
       });
       document.body.style.backgroundColor = "#00350c";
       document.body.style.color = "white";
@@ -75,7 +75,7 @@ function App() {
 
   return (
     <>
-   
+   <Router>
       <Navbar
         title="TextUtils"
         a="About"
@@ -89,19 +89,22 @@ function App() {
         showAlert={showAlert}
       />
       <Alert alert={alert} />
-      
+      <Switch>
+        <Route exact path="/about" >
+          <About mode={mode}/>
+      </Route>
          
           
-          
+          <Route exact path="/">
           <TextInput
         heading="enter your text to analyze"
         a=""
         mode={mode}
         showAlert={showAlert}
       />
-     
-          
-      
+     </Route>
+     </Switch>
+     </Router>      
     </>
   );
 }

@@ -1,33 +1,23 @@
 import React, { useState } from "react";
 
-export default function About() {
+export default function About(props) {
   const [style, setStyle] = useState({
     backgroundColor: "white",
     color: "black",
   });
 
-  const darkMode = () => {
-    if (style.backgroundColor === "white") {
-      setStyle({
-        backgroundColor: "black",
-        color: "white",
-        border :"1px solid white"
-      });
-    } else {
-      setStyle({
-        backgroundColor: "white",
-        color: "black",
-      });
-    }
-  };
+  
+
+  var NewStyle = props.mode.color
+
 
   return (
     <>
-      <div className="accordion" style={style} id="accordionExample">
-        <div className="accordion-item" style={style}>
+      <div className="accordion" style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}} id="accordionExample">
+        <div className="accordion-item" style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}>
           <h2 className="accordion-header" id="headingOne">
             <button
-              style={style}
+              style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
@@ -56,10 +46,10 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={style}>
+        <div className="accordion-item" style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}>
           <h2 className="accordion-header" id="headingTwo">
             <button
-              style={style}
+              style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -88,10 +78,10 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={style}>
+        <div className="accordion-item" style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}>
           <h2 className="accordion-header" id="headingThree">
             <button
-              style={style}
+              style={{backgroundColor:NewStyle,color:props.mode.theme==="dark"?"white":"black",borderColor:props.mode.theme==="dark"?"white":"black"}}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -121,7 +111,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="form-check form-switch">
+      {/* <div className="form-check form-switch">
         <input
           className="form-check-input"
           onClick={darkMode}
@@ -131,7 +121,7 @@ export default function About() {
         <label className="form-check-label" for="flexSwitchCheckDefault">
           Dark mode
         </label>
-      </div>
+      </div> */}
     </>
   );
 }

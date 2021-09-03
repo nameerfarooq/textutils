@@ -36,13 +36,13 @@ export default function TextInput(props) {
   var btnColor =""
 if(props.mode.color==="white"){
  btnColor = ""
-}else if(props.mode.color==="blue"){
+}else if(props.mode.color==="#003154"){
    btnColor = "#003154"
 
-}else if(props.mode.color==="red"){
+}else if(props.mode.color==="#690000"){
    btnColor = "#690000"
 
-}else if(props.mode.color==="green"){
+}else if(props.mode.color==="#00350c"){
    btnColor = "#00350c"
 
 }
@@ -50,8 +50,8 @@ if(props.mode.color==="white"){
 
   return (
     <>
-      <div className="container my-">
-        <div className="mb-3">
+      <div className="container my-5">
+        <div className="my-3">
           <h3>{props.heading}</h3>
           <textarea
             className="form-control"
@@ -60,19 +60,19 @@ if(props.mode.color==="white"){
             value={text}
             onChange={handleText}
           ></textarea>
-          <button style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2 " onClick={Uppercase}>
+          <button disabled={text.length===0} style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2 " onClick={Uppercase}>
             UpperCase
           </button>
-          <button style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={Lowercase}>
+          <button disabled={text.length===0}  style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={Lowercase}>
             LowerCase
           </button>
-          <button style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={Copy}>
+          <button disabled={text.length===0} style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={Copy}>
             CopyText
           </button>
-          <button style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={ClearText}>
+          <button disabled={text.length===0} style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={ClearText}>
             ClearText
           </button>
-          <button style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={extraSpace}>
+          <button disabled={text.length===0} style={{backgroundColor:btnColor,border:"solid 1px white"}} className="btn btn-primary m-2" onClick={extraSpace}>
             clear Extra space
           </button>
         </div>
@@ -92,7 +92,7 @@ if(props.mode.color==="white"){
           </p>
         
 
-          <p>read time - {0.008 * text.split(" ").length}</p>
+          <p>read time - {0.008 * text.split(" ").filter((element)=>{return element.length !== 0}).length}</p>
           <h3 style={{ color: props.mode.theme === "dark" ? "yellow":"black"  }}>
             Preview
           </h3>
